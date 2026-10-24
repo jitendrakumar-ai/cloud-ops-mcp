@@ -76,3 +76,69 @@ python3 cloud_ops_mcp.py
 ## 📄 License
 
 MIT License © jitendrakumarvoicex-art (Dhruv)
+
+---
+
+## 🌐 Universal AI Agent Setup
+
+Integrate `cloud-ops-mcp` across all major AI development environments and agent frameworks.
+
+### 1. Cursor (`.cursor/mcp.json`)
+```json
+{
+  "mcpServers": {
+    "cloud-ops-mcp": {
+      "command": "python",
+      "args": ["-m", "cloud_ops_mcp"]
+    }
+  }
+}
+```
+
+### 2. OpenAI Codex CLI (`~/.codex/config.json`)
+```json
+{
+  "mcpServers": {
+    "cloud-ops-mcp": {
+      "command": "uvx",
+      "args": ["cloud-ops-mcp"]
+    }
+  }
+}
+```
+
+### 3. Google Antigravity IDE (`.antigravity/mcp_config.json`)
+```json
+{
+  "mcp_servers": {
+    "cloud-ops-mcp": {
+      "command": "python",
+      "args": ["-m", "cloud_ops_mcp"]
+    }
+  }
+}
+```
+
+### 4. Claude Desktop & Claude Code (`claude_desktop_config.json`)
+```json
+{
+  "mcpServers": {
+    "cloud-ops-mcp": {
+      "command": "python",
+      "args": ["-m", "cloud_ops_mcp"]
+    }
+  }
+}
+```
+
+### 5. Windsurf / Cline (`.windsurf/mcp_config.json` / `cline_mcp_settings.json`)
+```json
+{
+  "mcpServers": {
+    "cloud-ops-mcp": {
+      "command": "python",
+      "args": ["-m", "cloud_ops_mcp"]
+    }
+  }
+}
+```
