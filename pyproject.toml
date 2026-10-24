@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloud-ops-mcp"
+version = "1.2.0"
+description = "Production-ready Python Model Context Protocol (MCP) server for Cloud Telemetry, Port Diagnostics, Log Analysis & Secret Auditing."
+requires-python = ">=3.10"
+dependencies = []
+py-modules = ["cloud_ops_mcp"]
+
+[project.scripts]
+cloud-ops-mcp = "cloud_ops_mcp:main"
