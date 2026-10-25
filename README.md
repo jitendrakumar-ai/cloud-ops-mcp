@@ -205,7 +205,7 @@ python3 cloud_ops_mcp.py
 
 ## 📄 License
 
-MIT License © jitendrakumarvoicex-art (Dhruv)
+MIT License © jitendrakumarvoicex-art (Jitendra_Kumar)
 
 ---
 
