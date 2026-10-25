@@ -1,9 +1,130 @@
 # cloud-# ⚡ cloud-ops-mcp
 
-> **Production-ready Python Model Context Protocol (MCP) server for Cloud Telemetry, Port Diagnostics, Log Analysis & Secret Auditing — built for Claude Desktop, Cursor, Windsurf & AI Agents.**
-
----<div align="center">
+> **Production-ready Python Model Context <div align="center">
   <img src="assets/banner.svg" width="100%" alt="cloud-ops-mcp Banner" />
+
+  <br /><br />
+
+  🇬🇧 English • 🇮🇳 हिन्दी • 🇨🇳 中文 • 🇯🇵 日本語 • 🇪🇸 Español • 🇩🇪 Deutsch • 🇫🇷 Français • 🇰🇷 한국어
+
+  <br /><br />
+
+  `CI: Passing` • `Version: v1.2.0` • `Python: 3.10+` • `MCP: 2025-03-26` • `License: MIT`
+
+  <br /><br />
+
+  [Quick Start](#quick-start) • [How It Works](#how-it-works) • [3-Layer Workflow](#3-layer-workflow) • [MCP Tools](#mcp-tools) • [Architecture](#architecture) • [Configuration](#configuration) • [Security](#security) • [License](#license)
+</div>
+
+---
+
+# ⚡ cloud-ops-mcp
+
+> Production-ready Python Model Context Protocol (MCP) server for Cloud Telemetry, Port Diagnostics, Log Analysis & Secret Auditing — built for **Claude Desktop, Cursor, Windsurf, Google Antigravity & AI Agents**.
+
+---
+
+## 💡 How It Works & Token Efficiency
+
+Traditional cloud agent setups dump raw log files and huge infrastructure state dumps directly into the context window, consuming tens of thousands of tokens per request. `cloud-ops-mcp` implements a **claude-mem style 3-layer workflow** (Observation -> Index -> Compressed Summary) to inspect and diagnose systems with minimal token overhead.
+
+---
+
+## ⚡ Quick Start & Multi-IDE Integration
+
+### 1. Claude Code
+```bash
+claude mcp add cloud-ops python3 /path/to/cloud_ops_mcp.py
+```
+
+### 2. Cursor IDE
+Add to `.cursor/mcp.json` or Global Settings:
+```json
+{
+  "mcpServers": {
+    "cloud-ops": {
+      "command": "python3",
+      "args": ["/path/to/cloud_ops_mcp.py"]
+    }
+  }
+}
+```
+
+### 3. OpenAI Codex CLI
+```bash
+codex mcp add cloud-ops -- python3 /path/to/cloud_ops_mcp.py
+```
+
+### 4. Google Antigravity CLI/IDE
+```bash
+antigravity mcp register cloud-ops -- python3 /path/to/cloud_ops_mcp.py
+```
+
+### 5. OpenCode
+```bash
+opencode mcp install cloud-ops python3 /path/to/cloud_ops_mcp.py
+```
+
+### 6. Windsurf / Cline
+```json
+{
+  "mcpServers": {
+    "cloud-ops": {
+      "command": "python3",
+      "args": ["/path/to/cloud_ops_mcp.py"]
+    }
+  }
+}
+```
+
+---
+
+## 🔄 3-Layer Workflow
+
+### Step 1: Snapshot
+Capture high-level system state across all cloud clusters and services without loading raw body logs into memory:
+```python
+snapshot = await call_tool("cloud_ops_snapshot", {"region": "us-east-1"})
+```
+
+### Step 2: Filter
+Scope and isolate specific anomalies or failing instances based on severity or tags:
+```python
+filtered = await call_tool("cloud_ops_filter", {
+    "snapshot_id": snapshot["id"],
+    "severity": "CRITICAL",
+    "service": "k8s-ingress"
+})
+```
+
+### Step 3: Deep Audit
+Perform targeted, deep diagnostic verification on isolated resources with zero noise:
+```python
+audit = await call_tool("cloud_ops_audit", {
+    "resource_id": filtered["targets"][0],
+    "inspect_secrets": False
+})
+```
+
+---
+
+## 🛠️ MCP Tools
+
+- **`cloud_ops_snapshot`**: Generates instantaneous telemetry index across endpoints.
+- **`cloud_ops_filter`**: Applies low-token filtering to pinpoint error logs and failed open ports.
+- **`cloud_ops_audit`**: Conducts exhaustive security checks, network route verification, and secret auditing.
+
+---
+
+## 🛡️ Security
+
+See our official [SECURITY.md](SECURITY.md) policy for supported versions and vulnerability reporting procedure maintained by **NexusVibe AI Tech Security Team**.
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for details.mcp Banner" />
 
   <br />
   <br />
